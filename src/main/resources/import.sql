@@ -1,0 +1,1 @@
+insert into organisation (id, name, email, languageCode, creationDate, timeZone, currencyCode) values('1', 'Leonaar', 'david@leonaar.com', 'fr', '2024-11-01', 'Europe/Paris', 'EUR');
