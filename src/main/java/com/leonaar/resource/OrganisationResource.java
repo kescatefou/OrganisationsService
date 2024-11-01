@@ -8,6 +8,8 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 
 @Path("/organisations")
@@ -39,6 +41,7 @@ public class OrganisationResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Organisation createOrganisation(@Valid Organisation organisation) {
         organisationRepository.persist(organisation);
+        organisation.creationDate = LocalDate.now(ZoneId.of("GMT"));
         return organisation;
     }
 
